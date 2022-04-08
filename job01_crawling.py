@@ -16,7 +16,7 @@ import pandas as pd
 import time
 
 option = webdriver.ChromeOptions()
-#option.add_argument('headless')
+option.add_argument('headless')
 option.add_argument('lang=ko_KR')
 option.add_argument('--no-sandbox')
 option.add_argument('--disable-dev-shm-usage')
@@ -50,7 +50,7 @@ review_xpath = '//*[@id="content"]/div[1]/div[4]/div[1]/div[4]'
 titles = []
 reviews = []
 
-for i in range(1, 14):
+for i in range(21, 48):
     url = movie_page_url.format(i) # 영화 페이지
     for j in range(1, 21):
         try:
@@ -126,5 +126,5 @@ for i in range(1, 14):
             print('{}page error'.format(i))
     df = pd.DataFrame({'title':titles, 'reviews':reviews})
     print(df.tail())
-    df.to_csv('./crawling_data/reviews_{}_2018_1_20p.csv'.format(2022), index=False)
+    df.to_csv('./crawling_data/reviews_{}_2018_20_50p.csv'.format(2022), index=False)
 driver.close()
