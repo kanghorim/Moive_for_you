@@ -2,7 +2,7 @@ import pandas as pd
 from konlpy.tag import Okt
 import re
 
-df = pd.read_csv('./crawling_data/cleaned_review_2018_1_20.csv')
+df = pd.read_csv('./crawling_data/cleaned_review_2018_20_50.csv')
 print(df.head())
 df.info()
 
@@ -27,5 +27,5 @@ for sentence in df.cleaned_sentences:
 df['cleaned_sentences'] = cleaned_sentences
 print(df.head())
 df.info()
-df.to_csv('./crawling_data/cleaned_review_2018_1_20_final.csv',
+df.to_csv('./crawling_data/cleaned_review_2018_20_50_final.csv',
           index=False)

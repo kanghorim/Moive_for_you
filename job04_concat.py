@@ -9,5 +9,5 @@ for path in data_paths[1:]:
     df = pd.concat([df, df_temp], ignore_index=True,
               axis='rows')
 df.info()
-df.to_csv('./crawling_data/datasets/moive_review_2018_2022.csv',
+df.to_csv('./crawling_data/datasets/movie_review_2018_2022.csv',
           index=False)

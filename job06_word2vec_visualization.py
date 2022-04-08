@@ -14,7 +14,7 @@ rc('font', family=font_name)
 embedding_model = Word2Vec.load('./models/word2vecModel.model')
 print(list(embedding_model.wv.index_to_key))
 print(len(list(embedding_model.wv.index_to_key)))
-key_word = '여름'
+key_word = '도박'
 sim_word = embedding_model.wv.most_similar(key_word, topn=10)
 print(sim_word)
 print(len(sim_word))
