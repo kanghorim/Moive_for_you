@@ -27,8 +27,8 @@ for label, _ in sim_word:
 df_vectors = pd.DataFrame(vectors)
 print(df_vectors.head())
 
-tsne_model = TSNE(perplexity=40, n_components=2,
-                  init='pca', n_iter=2500)
+tsne_model = TSNE(perplexity=40, n_components=2, # job5에서 100차원인 코드를 n_components을 이용해 2차원으로 줄임
+                  init='pca', n_iter=2500) #n_iter 에폭스랑 똑같음
 new_value = tsne_model.fit_transform(df_vectors)
 df_xy = pd.DataFrame({'word':labels,
                       'x':new_value[:, 0],

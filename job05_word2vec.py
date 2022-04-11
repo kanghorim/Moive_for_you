@@ -12,7 +12,8 @@ for sentence in cleaned_token_review:
     cleaned_tokens.append(token)
 print(cleaned_tokens[0])
 
-embedding_model = Word2Vec(cleaned_tokens, vector_size = 100, window = 4, min_count = 20,
+embedding_model = Word2Vec(cleaned_tokens, vector_size = 100, window = 4, min_count = 20, # 각각 100차원 min_count최소 20번 이상
+                           # workers cpu개수 epochs = 학습개수 sg = 1 고정
                            workers = 4, epochs = 100, sg = 1)
 
 embedding_model.save('./models/word2vecModel.model')

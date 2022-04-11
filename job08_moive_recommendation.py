@@ -29,7 +29,7 @@ with open('./models/tfidf.pickle', 'rb') as f:
 # print(df_reviews.iloc[movie_idx, 0])
 
 embedding_model = Word2Vec.load('./models/word2vecModel.model')
-key_word = '동성애'
+key_word = '아이언맨'
 sim_word = embedding_model.wv.most_similar(key_word, topn=10)
 sentence = [key_word] * 11
 
@@ -49,3 +49,4 @@ cosine_sim = linear_kernel(sentence_vec, Tfidf_matrix)
 #cosine_sim = linear_kernel(Tfidf_matrix[movie_idx], Tfidf_matrix)
 recommendation = getRecommendation(cosine_sim)
 print(recommendation)
+
